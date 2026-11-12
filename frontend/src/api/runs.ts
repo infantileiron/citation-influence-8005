@@ -1,1 +1,1 @@
-import {request} from './client';import type {Run} from '../types/entities';export const list=()=>request<Run[]>('/runs');export const create=(data:unknown)=>request<Run>('/runs','POST',data);
+import {request} from './client';import type {Ledger, Run} from '../types/entities';export const list=()=>request<Run[]>('/runs');export const create=(data:unknown)=>request<Run>('/runs','POST',data);export const ledger=(id:string)=>request<Ledger>('/runs/'+id+'/ledger');

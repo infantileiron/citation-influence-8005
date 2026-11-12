@@ -2,9 +2,16 @@ from src.models.entities import InfluenceRun
 from src.utils import repository as repo
 from src.utils.identity import new_id, now
 from src.services.statistics import analyze
+from src.services.ledger import source_ledger
 from src.config.settings import TASK_MODE, REDIS_URL, ARTIFACT_DIR
 import json
 def list_runs(): return repo.all_rows("runs")
+def ledger(id):
+    run=repo.get("runs",id)
+    if run["status"]!="completed": raise ValueError("运行未完成，无传播概率可对账")
+    result=source_ledger(run["result"])
+    result.update({"run_id":run["id"],"study_id":run["study_id"],"checksum":run["result"].get("checksum","")})
+    return result
 def execute(id):
     run=repo.get("runs",id)
     if run["status"] in ("running","completed"): return run

@@ -1,0 +1,55 @@
+[A] demo converged=True iters=40 residual=7.262e-11
+PASS [A]: 逐篇total等于运行PageRank
+PASS [A]: 四桶+对账差=total(构造恒等)
+PASS [A]: 桶非负
+PASS [A]: 对账差上限 | gap_max=4.232e-12
+PASS [A]: 概率和≈1 | sum=1.000000000000
+PASS [A]: 桶合计+对账差=概率和
+PASS [A]: 引用流入=直接+多跳(收敛恒等)
+PASS [A]: 列出来源流量不超过引用流入
+PASS [A]: 路径不含自返起点(循环不重复计入)
+PASS [A] 收敛标记
+PASS [A] 孤立YL47仅跳转+悬空回流
+PASS [A] 孤立YL48仅跳转+悬空回流
+PASS [A] 断连分量提示
+PASS [A] 悬空质量为正
+PASS [A] 悬空文献有回流注释
+[B] zero-weight converged=True iters=31
+PASS [B]: 逐篇total等于运行PageRank
+PASS [B]: 四桶+对账差=total(构造恒等)
+PASS [B]: 桶非负
+PASS [B]: 对账差上限 | gap_max=2.502e-12
+PASS [B]: 概率和≈1 | sum=1.000000000000
+PASS [B]: 桶合计+对账差=概率和
+PASS [B]: 引用流入=直接+多跳(收敛恒等)
+PASS [B]: 列出来源流量不超过引用流入
+PASS [B]: 路径不含自返起点(循环不重复计入)
+PASS [B] 46篇零权重
+PASS [B] 零权重篇跳转=悬空回流=0
+PASS [B] 零权重注释
+[C] max_iter=1 converged=False residual=4.094e-01
+PASS [C] 未收敛标记
+PASS [C] 对账差非零且被交代 | gap_abs=2.051e-01
+PASS [C] 未收敛提示
+PASS [C] 四桶+对账差仍逐篇闭合
+[D] cycle graph converged=True iters=163
+PASS [D]: 逐篇total等于运行PageRank
+PASS [D]: 四桶+对账差=total(构造恒等)
+PASS [D]: 桶非负
+PASS [D]: 对账差上限 | gap_max=5.701e-14
+PASS [D]: 概率和≈1 | sum=1.000000000000
+PASS [D]: 桶合计+对账差=概率和
+PASS [D]: 引用流入=直接+多跳(收敛恒等)
+PASS [D]: 列出来源流量不超过引用流入
+PASS [D]: 路径不含自返起点(循环不重复计入)
+PASS [D] 循环双方自返质量被标注 | A=3.195e-01 B=3.044e-01
+PASS [D] 循环注释
+PASS [D] D孤立仅跳转+悬空回流
+PASS [D] 悬空质量=D+E(均无出边)
+PASS [D] 悬空回流按p均匀分配
+PASS [D] A的主要来源含B与C
+PASS [E] Σ跳转=1-d | 0.150000000000
+PASS [E] Σ悬空回流=d·DM
+PASS [E] Σ直接+Σ多跳=d·(1-DM)(收敛) | 0.803436507113 vs 0.803436507104
+
+ALL CHECKS PASSED
