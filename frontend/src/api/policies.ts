@@ -1,0 +1,1 @@
+import {request} from './client';import type {Policy} from '../types/entities';export const list=()=>request<Policy[]>('/policies');export const create=(data:unknown)=>request<Policy>('/policies','POST',data);

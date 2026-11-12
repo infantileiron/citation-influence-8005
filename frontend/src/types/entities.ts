@@ -1,0 +1,11 @@
+export type User={email:string;name:string;role:string};
+export type Paper={id:string;title:string;year:number;area:string};
+export type Dataset={id:string;name:string;source:string;node_count:number;edge_count:number;areas:string[]};
+export type Policy={id:string;name:string;dataset_id:string;damping:number;personalization:Record<string,number>;tolerance:number;max_iter:number};
+export type Study={id:string;name:string;dataset_id:string;policy_id:string;checksum:string};
+export type Score=Paper&{pagerank:number;hub:number;authority:number;in_degree:number;out_degree:number;personalization:number;pagerank_rank:number;hub_rank:number;authority_rank:number};
+export type Iteration={iteration:number;residual:number;probability_sum?:number};
+export type Result={rows:Score[];edges:string[][];node_count:number;edge_count:number;dangling_count:number;isolated_count:number;components:string[][];pagerank:{scores:Record<string,number>;iterations:number;converged:boolean;residual:number;probability_sum:number;history:Iteration[]};hits:{hub:Record<string,number>;authority:Record<string,number>;iterations:number;converged:boolean;residual:number|null;hub_l2:number;authority_l2:number;degenerate:boolean;non_unique:boolean;top_singular_value:number;top_multiplicity:number;note:string;history:Iteration[]};policy:Policy;source:string;checksum:string;direction:string;limitations:string[]};
+export type Run={id:string;study_id:string;status:string;result:Result;error:string};
+export type Review={id:string;run_id:string;comment:string;status:string;reviewer:string};
+export type Report={id:string;run_id:string;review_id:string;title:string};

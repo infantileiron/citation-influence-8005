@@ -1,0 +1,1 @@
+export const roleLabels:Record<string,string>={admin:'引文复核编辑',analyst:'文献网络分析员',viewer:'索引阅览员'};export const statusLabels:Record<string,string>={queued:'排队中',running:'计算中',completed:'已完成',failed:'运行失败',pending:'待复核',approved:'已通过',rejected:'已退回'};
